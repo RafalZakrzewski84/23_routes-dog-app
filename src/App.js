@@ -1,15 +1,19 @@
 /** @format */
 
-import './App.css';
-
+import { Routes, Route } from 'react-router-dom';
 import assets from './assets';
 import Navbar from './components/Navbar';
+import DogsList from './components/DogsList';
+
+import './App.css';
 
 function App() {
 	return (
 		<div className="App">
-			<Navbar />
-			<h1 className="display-1">{assets.dogs[0].name}</h1>
+			<Navbar dogs={assets.dogs} />
+			<Routes>
+				<Route path="/dogs" element={<DogsList dogs={assets.dogs} />} />
+			</Routes>
 		</div>
 	);
 }
