@@ -1,6 +1,7 @@
 /** @format */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DogsList = ({ dogs }) => {
 	return (
@@ -13,13 +14,11 @@ const DogsList = ({ dogs }) => {
 							<div className="card">
 								<img src={dog.src} className="card-img-top" alt={dog.name} />
 								<div className="card-body">
-									<h5 className="card-title">{dog.name}</h5>
-									<a href="#" className="btn btn-primary">
-										Show Details
-									</a>
+									<Link to={`/dogs/${dog.name}`} className="btn btn-primary">
+										Show Details About {dog.name}
+									</Link>
 								</div>
 							</div>
-							<h1 className="display-1 text-center"></h1>
 						</div>
 					))}
 				</div>
