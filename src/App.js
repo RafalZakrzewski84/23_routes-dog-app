@@ -14,7 +14,10 @@ function App() {
 			<Navbar dogs={assets.dogs} />
 			<Routes>
 				<Route path="/dogs" element={<DogsList dogs={assets.dogs} />} />
-				<Route path="/dogs/:name" element={<DogDetails />} />
+				<Route
+					path="/dogs/:dogName"
+					element={<DogDetails dogs={assets.dogs} />}
+				/>
 			</Routes>
 		</div>
 	);
