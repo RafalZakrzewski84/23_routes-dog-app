@@ -1,16 +1,19 @@
 /** @format */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = ({ dogs }) => {
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg bg-light">
+			<nav className="navbar navbar-expand-lg bg-dark">
 				<div className="container-fluid">
-					<a className="navbar-brand" href="#">
+					<NavLink
+						to="/dogs"
+						className="navbar-brand nav-link active text-white"
+						href="#">
 						Meet Our Dogs
-					</a>
+					</NavLink>
 					<button
 						className="navbar-toggler"
 						type="button"
@@ -19,39 +22,22 @@ const Navbar = ({ dogs }) => {
 						aria-controls="navbarSupportedContent"
 						aria-expanded="false"
 						aria-label="Toggle navigation">
-						<span className="navbar-toggler-icon"></span>
+						<span className="navbar-toggler-icon text-white"></span>
 					</button>
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-							<li className="nav-item">
-								<Link
-									to="/dogs"
-									className="nav-link active"
-									aria-current="page">
-									Dogs
-								</Link>
-							</li>
 							{dogs.map((dog, idx) => {
 								return (
 									<li key={dog.name + idx} className="nav-item">
-										<Link to={`/dogs/${dog.name}`} className="nav-link">
+										<NavLink
+											to={`/dogs/${dog.name}`}
+											className="nav-link text-white">
 											{dog.name}
-										</Link>
+										</NavLink>
 									</li>
 								);
 							})}
 						</ul>
-						<form className="d-flex" role="search">
-							<input
-								className="form-control me-2"
-								type="search"
-								placeholder="Search"
-								aria-label="Search"
-							/>
-							<button className="btn btn-outline-success" type="submit">
-								Search
-							</button>
-						</form>
 					</div>
 				</div>
 			</nav>
