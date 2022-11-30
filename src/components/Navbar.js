@@ -6,12 +6,9 @@ import { NavLink } from 'react-router-dom';
 const Navbar = ({ dogs }) => {
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg bg-dark">
+			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 				<div className="container-fluid">
-					<NavLink
-						to="/dogs"
-						className="navbar-brand nav-link active text-white"
-						href="#">
+					<NavLink to="/dogs" className="navbar-brand nav-link active" href="#">
 						Meet Our Dogs
 					</NavLink>
 					<button
@@ -22,16 +19,14 @@ const Navbar = ({ dogs }) => {
 						aria-controls="navbarSupportedContent"
 						aria-expanded="false"
 						aria-label="Toggle navigation">
-						<span className="navbar-toggler-icon text-white"></span>
+						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 							{dogs.map((dog, idx) => {
 								return (
 									<li key={dog.name + idx} className="nav-item">
-										<NavLink
-											to={`/dogs/${dog.name}`}
-											className="nav-link text-white">
+										<NavLink to={`/dogs/${dog.name}`} className="nav-link">
 											{dog.name}
 										</NavLink>
 									</li>

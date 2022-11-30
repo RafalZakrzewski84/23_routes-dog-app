@@ -1,0 +1,10 @@
+.DogsList__dog img {
+	width: 65%;
+	border-radius: 50%;
+	filter: grayscale();
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.DogsList__dog:hover img {
+	filter: none;
+}
